@@ -1132,7 +1132,7 @@ function adminform($name = '', $pass = '', $storage = '', $path = '')
         }
     }
 </script>
-<script src="https://cdn.jsdelivr.net/npm/js-sha1@0.6.0/src/sha1.min.js"></script>';
+<script src="https://cdn.bootcdn.net/ajax/libs/js-sha1/0.6.0/sha1.min.js"></script>';
     $html .= '</html>';
     return output($html, $statusCode);
 }
@@ -1758,7 +1758,7 @@ output:
             $canOneKeyUpate = 1;
         } elseif (isset($_SERVER['HEROKU_APP_DIR'])&&$_SERVER['HEROKU_APP_DIR']==='/app') {
             $canOneKeyUpate = 1;
-        } elseif (isset($_SERVER['FC_FUNC_CODE_PATH'])) {
+        } elseif (isset($_SERVER['FC_SERVER_PATH'])&&$_SERVER['FC_SERVER_PATH']==='/var/fc/runtime/php7.2') {
             $canOneKeyUpate = 1;
         } elseif (isset($_SERVER['BCE_CFC_RUNTIME_NAME'])&&$_SERVER['BCE_CFC_RUNTIME_NAME']=='php7') {
             $canOneKeyUpate = 1;
@@ -1890,7 +1890,7 @@ output:
             $frame .= getconstStr('NotNeedUpdate');
         }*/
         $frame .= '<br><br>
-<script src="https://cdn.jsdelivr.net/npm/js-sha1@0.6.0/src/sha1.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/js-sha1/0.6.0/sha1.min.js"></script>
 <table>
     <form id="change_pass" name="change_pass" action="" method="POST" onsubmit="return changePassword(this);">
         <input name="_admin" type="hidden" value="">
